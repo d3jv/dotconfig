@@ -82,6 +82,17 @@ done
 hc keybind $Mod-period use_index +1 --skip-visible
 hc keybind $Mod-comma  use_index -1 --skip-visible
 
+# tag navigation on czech keyboard
+hc keybind $Mod-plus      use_index 0
+hc keybind $Mod-ecaron    use_index 1
+hc keybind $Mod-scaron    use_index 2
+hc keybind $Mod-ccaron    use_index 3
+hc keybind $Mod-rcaron    use_index 4
+hc keybind $Mod-zcaron    use_index 5
+hc keybind $Mod-yacute    use_index 6
+hc keybind $Mod-aacute    use_index 7
+hc keybind $Mod-iacute    use_index 8
+
 # layouting
 hc keybind $Mod-r remove
 hc keybind $Mod-s floating toggle
