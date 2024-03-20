@@ -1,5 +1,8 @@
 #!/usr/bin/env bash
 
+# disable panel
+exit 0
+
 quote() {
 	local q="$(printf '%q ' "$@")"
 	printf '%s' "${q% }"
