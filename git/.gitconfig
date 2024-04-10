@@ -1,0 +1,20 @@
+# This is Git's per-user configuration file.
+[user]
+	name = David Štorek
+	email = xstorek@fi.muni.cz
+	signingkey = 4629B7296BF10D85
+[alias]
+	st = status
+	sw = switch
+	graph = log --oneline --graph --all --decorate
+	g = graph
+[core]
+	autocrlf = input
+[pull]
+	rebase = true
+[commit]
+	gpgsign = true
+[tag]
+	gpgsign = true
+[init]
+	defaultBranch = master
