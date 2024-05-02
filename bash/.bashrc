@@ -4,20 +4,8 @@
 [[ $- != *i* ]] && return
 
 # Source bash completions
-if [ -f /usr/share/bash-completion/bash_completion ]; then
-	. /usr/share/bash-completion/bash_completion
-fi
-
-if [ -f /usr/share/bash-completion/completions/herbstclient ]; then
-	. /usr/share/bash-completion/completions/herbstclient
-fi
-
-if [ -f /usr/share/bash-completion/completions/git ]; then
-	. /usr/share/bash-completion/completions/git
-fi
-
-if [ -f ~/.dotnet/dotnet_bash_completion ]; then
-	. ~/.dotnet/dotnet_bash_completion
+if [ -f .bash_completions ]; then
+	. .bash_completions
 fi
 
 # HISTORY

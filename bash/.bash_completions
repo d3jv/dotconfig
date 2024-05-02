@@ -1,0 +1,19 @@
+#!/bin/bash
+# the shebang is here just for syntax highlighting
+
+if [ -f /usr/share/bash-completion/bash_completion ]; then
+	. /usr/share/bash-completion/bash_completion
+fi
+
+if [ -f /usr/share/bash-completion/completions/herbstclient ]; then
+	. /usr/share/bash-completion/completions/herbstclient
+fi
+
+if [ -f /usr/share/bash-completion/completions/git ]; then
+	. /usr/share/bash-completion/completions/git
+fi
+
+if [ -f ~/.dotnet/dotnet_bash_completion ]; then
+	. ~/.dotnet/dotnet_bash_completion
+fi
+
