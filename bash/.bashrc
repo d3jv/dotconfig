@@ -37,6 +37,8 @@ PROMPT_COMMAND='__update_ps1; history -a'
 # ALIASES and FUNCTIONS
 alias ls='lsd'
 alias ll='lsd -la'
+alias lstr='ls --tree'
+alias lltr='ll --tree'
 alias '?'='echo $?'
 alias packages='xbps-query -l | awk '"'"'{ print $2 }'"'"' | xargs -n1 xbps-uhelper getpkgname'
 alias fpackages='packages | fzf'
