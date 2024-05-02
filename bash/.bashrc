@@ -53,9 +53,12 @@ alias ls='ls --color=auto'
 alias l='lsd'
 alias ll='lsd -la'
 alias '?'='echo $?'
-alias fman='compgen -c | fzf | xargs man'
-alias fpackages='xbps-query -l | awk '"'"'{ print $2 }'"'"' | xargs -n1 xbps-uhelper getpkgname | fzf'
-alias fhistory='history | fzf'
+alias packages='xbps-query -l | awk '"'"'{ print $2 }'"'"' | xargs -n1 xbps-uhelper getpkgname'
+alias fpackages='packages | fzf'
+alias fhistory='history | fzf --tac'
+fman() {
+	apropos . -s $1 | fzf -e --no-sort | sed 's/^\([^, (]*\).*/\1/' | xargs man $1
+}
 
 export EDITOR=vim
 export VISUAL=vim
