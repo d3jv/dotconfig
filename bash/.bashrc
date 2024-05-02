@@ -16,6 +16,10 @@ if [ -f /usr/share/bash-completion/completions/git ]; then
 	. /usr/share/bash-completion/completions/git
 fi
 
+if [ -f ~/.dotnet/dotnet_bash_completion ]; then
+	. ~/.dotnet/dotnet_bash_completion
+fi
+
 # HISTORY
 
 # don't put duplicate lines or lines starting with space in the history.
