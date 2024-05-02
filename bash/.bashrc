@@ -50,7 +50,7 @@ alias packages='xbps-query -l | awk '"'"'{ print $2 }'"'"' | xargs -n1 xbps-uhel
 alias fpackages='packages | fzf'
 alias fhistory='history | fzf --tac'
 fman() {
-	apropos . -s $1 | fzf -e --no-sort | sed 's/^\([^, (]*\).*/\1/' | xargs man $1
+	apropos . -s "$1" | fzf -e --no-sort | sed 's/^\([^, (]*\).*/\1/' | xargs man "$1"
 }
 toilet-lsfonts() {
 	for I in $(ls /usr/share/figlet); do
