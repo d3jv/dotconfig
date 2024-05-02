@@ -49,8 +49,7 @@ function toilet-lsfonts {
 	done
 }
 
-alias ls='ls --color=auto'
-alias l='lsd'
+alias ls='lsd'
 alias ll='lsd -la'
 alias '?'='echo $?'
 alias packages='xbps-query -l | awk '"'"'{ print $2 }'"'"' | xargs -n1 xbps-uhelper getpkgname'
