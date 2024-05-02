@@ -58,6 +58,7 @@ alias fhistory='history | fzf --tac'
 fman() {
 	apropos . -s $1 | fzf -e --no-sort | sed 's/^\([^, (]*\).*/\1/' | xargs man $1
 }
+which zoxide >/dev/null 2>/dev/null && eval "$(zoxide init --cmd cd bash)"
 
 export EDITOR=vim
 export VISUAL=vim
