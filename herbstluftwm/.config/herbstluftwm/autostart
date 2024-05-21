@@ -186,6 +186,10 @@ hc rule windowtype='_NET_WM_WINDOW_TYPE_DIALOG' focus=on
 hc rule windowtype~'_NET_WM_WINDOW_TYPE_(NOTIFICATION|DOCK|DESKTOP)' manage=off
 hc rule fixedsize floating=on
 
+# Fix KDE popups
+hc rule class=krunner floating=on floatplacement=center
+hc rule class=kscreen_osd_service floating=on
+
 hc set tree_style '╾│ ├└╼─┐'
 
 hc detect_monitors
