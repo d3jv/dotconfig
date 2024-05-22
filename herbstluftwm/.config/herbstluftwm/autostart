@@ -116,6 +116,7 @@ hc keybind $Mod-Tab         cycle_all +1
 hc keybind $Mod-Shift-Tab   cycle_all -1
 hc keybind $Mod-c cycle
 hc keybind $Mod-i jumpto urgent
+hc keybind $Mod-z use_previous
 
 # theme
 hc attr theme.tiling.reset 1
