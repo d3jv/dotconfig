@@ -8,6 +8,8 @@ hc() {
 
 hc lock
 
+kblayout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')
+
 hc emit_hook reload
 
 xsetroot -solid '#5A8E3A'
@@ -67,6 +69,9 @@ hc keybind $Mod-Control-Right   resize right +$resizestep
 # tags
 tag_names=( {1..9} )
 tag_keys=( {1..9} 0 )
+if [ "$kblayout" = "cz" ]; then
+    tag_keys=( plus ecaron scaron ccaron rcaron zcaron yacute aacute iacute eacute )
+fi
 
 hc rename default "${tag_names[0]}" || true
 for i in "${!tag_names[@]}" ; do
@@ -81,17 +86,6 @@ done
 # cycle through tags
 hc keybind $Mod-period use_index +1 --skip-visible
 hc keybind $Mod-comma  use_index -1 --skip-visible
-
-# tag navigation on czech keyboard
-hc keybind $Mod-plus      use_index 0
-hc keybind $Mod-ecaron    use_index 1
-hc keybind $Mod-scaron    use_index 2
-hc keybind $Mod-ccaron    use_index 3
-hc keybind $Mod-rcaron    use_index 4
-hc keybind $Mod-zcaron    use_index 5
-hc keybind $Mod-yacute    use_index 6
-hc keybind $Mod-aacute    use_index 7
-hc keybind $Mod-iacute    use_index 8
 
 # layouting
 hc keybind $Mod-r remove
