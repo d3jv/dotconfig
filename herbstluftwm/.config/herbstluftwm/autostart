@@ -185,6 +185,9 @@ hc rule fixedsize floating=on
 hc rule class=krunner floating=on floatplacement=center
 hc rule class=kscreen_osd_service floating=on
 
+#open Thunderbird mailto links on tag 7
+hc rule instance=Msgcompose class=Thunderbird tag=7 focus=on
+
 hc set tree_style '╾│ ├└╼─┐'
 
 hc detect_monitors
