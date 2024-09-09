@@ -12,7 +12,7 @@ kblayout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')
 
 hc emit_hook reload
 
-xsetroot -solid '#5A8E3A'
+feh -bg-scale $HOME/Pictures/wallpaper.jpg || xsetroot -solid '#a56e00'
 
 hc set default_frame_layout horizontal
 
