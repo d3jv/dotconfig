@@ -206,5 +206,5 @@ hc unlock
 # or simply:
 # hc detect_monitors
 
-$XDG_CONFIG_HOME/polybar/launch.sh
+$HOME/.config/polybar/launch.sh
 
