@@ -54,6 +54,7 @@ toilet-lsfonts() {
 which zoxide >/dev/null 2>/dev/null && eval "$(zoxide init --cmd cd bash)"
 
 # VARIABLES
+export TZ="Europe/Prague"
 export EDITOR=vim
 export VISUAL=vim
 export TERMINAL=konsole
