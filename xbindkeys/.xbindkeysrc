@@ -1,0 +1,32 @@
+###########################
+# xbindkeys configuration #
+###########################
+
+# FN KEYS
+
+"wpctl set-mute @DEFAULT_AUDIO_SINK@ toggle"
+  Mod2 + XF86AudioMute
+
+"wpctl set-volume @DEFAULT_AUDIO_SINK@ .05+"
+  Mod2 + XF86AudioRaiseVolume
+
+"wpctl set-volume @DEFAULT_AUDIO_SINK@ .05-"
+  Mod2 + XF86AudioLowerVolume
+
+"wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
+  Mod2 + XF86AudioMicMute  
+
+# "arandr"
+#   Mod2 + XF86Display
+
+# "calculator"
+#   Mod2 + XF86Calculator
+
+# OTHERS
+
+"flameshot gui"
+  Mod2 + Print
+
+##################################
+# End of xbindkeys configuration #
+##################################
