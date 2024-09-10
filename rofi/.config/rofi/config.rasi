@@ -1,4 +1,5 @@
 configuration {
+    modes: "window,drun,run,ssh,calc";
     font: "Noto Sans 14";
     show-icons: true;
     padding: 20;
