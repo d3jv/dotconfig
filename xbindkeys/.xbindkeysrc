@@ -19,8 +19,8 @@
 # "arandr"
 #   Mod2 + XF86Display
 
-# "calculator"
-#   Mod2 + XF86Calculator
+"rofi -show calc"
+  Mod2 + XF86Calculator
 
 # OTHERS
 
