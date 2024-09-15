@@ -61,6 +61,8 @@ export TERMINAL=konsole
 export LESSCHARSET=utf-8
 export CC=cc
 export GPG_TTY=$(tty)
+export GTK_THEME=Adwaita:dark
+export QT_STYLE_OVERRIDE=Adwaita-Dark
 
 # DOTNET SHIT
 export DOTNET_ROOT=/opt/dotnet
