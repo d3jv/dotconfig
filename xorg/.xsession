@@ -8,7 +8,6 @@ xset +fp /usr/share/fonts/noto
 xset +fp /usr/share/fonts/TTF
 
 export TERMINAL=konsole
-export KDEWM=herbstluftwm
 
 pipewire &
 xbindkeys
