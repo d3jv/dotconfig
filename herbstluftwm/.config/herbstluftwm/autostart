@@ -123,6 +123,7 @@ hc keybind $Mod-z use_previous
 
 hc keybind $Mod-y spawn rofi -show combi -modes combi -combi-modes "window,drun,run"
 hc keybind $Mod-Shift-y spawn rofi -show ssh
+hc keybind $Mod-x spawn rofi -show p -modi p:'rofi-power-menu' -theme-str 'window {width: 8em;} listview {lines: 6;}' -location 3 -yoffset 28
 
 # theme
 hc attr theme.tiling.reset 1
