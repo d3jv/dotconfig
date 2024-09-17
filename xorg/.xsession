@@ -13,6 +13,7 @@ export KDEWM=herbstluftwm
 pipewire &
 xbindkeys
 xscreensaver --nosplash &
+dunst &
 
 # start herbstluft in locked mode, it will be unlocked at the end of autostart
 # exec herbstluftwm --locked
