@@ -62,7 +62,7 @@ export LESSCHARSET=utf-8
 export CC=cc
 export GPG_TTY=$(tty)
 export GTK_THEME=Adwaita:dark
-export QT_STYLE_OVERRIDE=Adwaita-Dark
+export QT_QPA_PLATFORMTHEME=qt5ct
 
 # DOTNET SHIT
 export DOTNET_ROOT=/opt/dotnet
