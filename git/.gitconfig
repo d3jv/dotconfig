@@ -8,6 +8,7 @@
 	sw = switch
 	graph = log --oneline --graph --all --decorate
 	g = graph
+	vd = difftool --tool=vimdiff -y
 [core]
 	autocrlf = input
 [pull]
