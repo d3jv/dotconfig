@@ -11,6 +11,8 @@ alias fhistory='history | fzf --tac'
 alias fdiff='git status --short | grep -E '"'"'^ M'"'"' | awk '"'"'{ print $2 }'"'"' | fzf --cycle --preview="git diff --color {}" --print0 | xargs -r -o -0 vim'
 alias fd=fdiff
 
+alias adminer='sudo docker run --rm -p 8080:8080 --network=host -it adminer'
+
 # FUNCTIONS
 
 fgit() {(
@@ -30,7 +32,7 @@ fgit() {(
 
 	export -f __fgit_preview
 
-	git status --short | \
+	git diff --name-only --relative --diff-filter=d | \
 	fzf --cycle --multi --preview="__fgit_preview {}" | \
 	awk '{ print $2 }' | \
 	xargs git $@
