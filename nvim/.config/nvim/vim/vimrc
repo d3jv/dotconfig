@@ -1,0 +1,157 @@
+set number
+set backspace=indent,eol,start
+filetype indent plugin on
+syntax on
+inoremap <S-Tab> <C-V><Tab>
+
+set nocompatible
+set encoding=utf-8
+
+" Color 81. character in line to visualize long lines
+highlight ColorColumn ctermbg=magenta
+call matchadd('ColorColumn', '\%81v', 100)
+
+set linebreak		" Break lines at word (requires Wrap lines)
+set showbreak=+++ 	" Wrap-broken line prefix
+set showmatch		" Highlight matching brace
+set showcmd	    	" Show last command on right
+set cursorline 		" Highlight current line
+
+set hlsearch		" Highlight all search results
+set smartcase		" Enable smart-case search
+set ignorecase		" Always case-insensitive
+set incsearch		" Searches for strings incrementally
+
+set cindent		" Use 'C' style program indenting
+set tabstop=4
+set softtabstop=0
+set noexpandtab
+set shiftwidth=4	" Number of auto-indent spaces
+set smartindent		" Enable smart-indent
+set smarttab		" Enable smart-tabs
+set wrap 		" Wrap lines
+
+set ruler			" Show row and column ruler information
+set undolevels=1000		" Number of undo levels
+
+set foldmethod=manual
+
+set updatetime=300
+set signcolumn=yes
+
+"""""
+""""" Key mapping
+"""""
+" Move lines using Ctrl+Up/Down in normal, insert and visual modes
+nnoremap <C-Up> :m-2<CR>
+nnoremap <C-Down> :m+<CR>
+inoremap <C-Up> <Esc>:m-2<CR>
+inoremap <C-Down> <Esc>:m+<CR>
+vnoremap <C-Up> :m '<-2<CR>gv=gv
+vnoremap <C-Down> :m '>+1<CR>gv=gv
+" or Ctrl+j/k
+"nnoremap <C-j> :m .+1<CR>==
+"nnoremap <C-k> :m .-2<CR>==
+"inoremap <C-j> <ESC>:m .+1<CR>==gi
+"inoremap <C-k> <ESC>:m .-2<CR>==gi
+"vnoremap <C-j> :m '>+1<CR>gv=gv
+"vnoremap <C-k> :m '<-2<CR>gv=gv
+
+" Better tab experience
+map <leader>tn :tabnew<cr>
+map <leader>tm :tabmove
+map <leader>tc :tabclose<cr>
+map <leader>to :tabonly<cr>
+
+" Replace selected text in the whole file
+vnoremap <C-r> "hy:%s!<C-r>h!!g<left><left>
+
+"""""
+""""" Colours
+"""""
+" Use truecolor in the terminal, when it is supported
+if has('termguicolors')
+  set termguicolors
+endif
+
+colorscheme gruvbox-material
+
+"""""
+""""" Lightline
+"""""
+set laststatus=2	"Makes the line work
+set noshowmode		"Don't show the mode since it's already in line
+
+let g:lightline = {
+\ 'colorscheme': 'gruvbox-material',
+\ 'active': {
+\   'right': [
+\     ['linter_checking', 'linter_errors', 'linter_warnings', 'linter_infos', 'linter_ok'],
+\     ['lineinfo'], ['percent'],
+\     ['fileformat', 'fileencoding', 'filetype', 'sharpenup']
+\   ]
+\ },
+\ 'inactive': {
+\   'right': [['lineinfo'], ['percent'], ['sharpenup']]
+\ },
+\ 'component_expand': {
+\   'linter_checking': 'lightline#ale#checking',
+\   'linter_infos': 'lightline#ale#infos',
+\   'linter_warnings': 'lightline#ale#warnings',
+\   'linter_errors': 'lightline#ale#errors',
+\   'linter_ok': 'lightline#ale#ok'
+\  },
+\ 'component_type': {
+\   'linter_checking': 'right',
+\   'linter_infos': 'right',
+\   'linter_warnings': 'warning',
+\   'linter_errors': 'error',
+\   'linter_ok': 'right'
+\  }
+\}
+
+" Use unicode chars for ale indicators in the statusline
+let g:lightline#ale#indicator_checking = "\uf110 "
+let g:lightline#ale#indicator_infos = "\uf129 "
+let g:lightline#ale#indicator_warnings = "\uf071 "
+let g:lightline#ale#indicator_errors = "\uf05e "
+let g:lightline#ale#indicator_ok = "\uf00c "
+
+"""""
+""""" AsciiDoctor settings copypasted from the plugin repo
+"""""
+" HTML
+let g:asciidoctor_executable = 'asciidoctor'
+"let g:asciidoctor_extensions = ['asciidoctor-diagram', 'asciidoctor-rouge']
+
+" PDF
+let g:asciidoctor_pdf_executable = 'asciidoctor-pdf'
+"let g:asciidoctor_pdf_extensions = ['asciidoctor-diagram']
+
+" folding
+"let g:asciidoctor_folding = 1
+"let g:asciidoctor_fold_options = 1
+
+" syntax highlighting for languages in [source] blocks
+let g:asciidoctor_fenced_languages = ['python', 'c', 'cs'] " TODO: add more
+
+" Function to create buffer local mappings and add default compiler
+fun! Asciidoctor()
+    compiler asciidoctor2pdf
+endfun
+
+" Call AsciidoctorMappings for all `*.adoc` and `*.asciidoc` files
+augroup asciidoctor
+    au!
+    au BufEnter *ad,*.adoc,*.asciidoc call Asciidoctor()
+augroup END
+
+"""""
+""""" Fix bracketed paste in tmux
+"""""
+if &term =~ "screen"
+    let &t_BE = "\e[?2004h"
+    let &t_BD = "\e[?2004l"
+    exec "set t_PS=\e[200~"
+    exec "set t_PE=\e[201~"
+endif
