@@ -14,9 +14,9 @@
   Mod2 + XF86AudioLowerVolume
 
 "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
-  Mod2 + XF86AudioMicMute  
+  Mod2 + XF86AudioMicMute
 
-"arandr"
+"rofi-randr-picker"
   Mod2 + XF86Display
 
 "rofi -show calc"
