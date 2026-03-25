@@ -16,6 +16,7 @@ fi
 
 # don't put duplicate lines or lines starting with space in the history.
 HISTCONTROL=ignoreboth
+HISTTIMEFORMAT="%Y-%m-%d %T "
 
 # append to the history file, don't overwrite it
 shopt -s histappend
@@ -50,6 +51,9 @@ export CC=cc
 export GPG_TTY=$(tty)
 export GTK_THEME=Adwaita:dark
 export QT_QPA_PLATFORMTHEME=qt5ct
+export CHROME_EXECUTABLE=chromium # For flutter
+export ANDROID_HOME="/home/dave/Android/Sdk"
+export PAGER=less
 
 # DOTNET SHIT
 export DOTNET_ROOT=/opt/dotnet
@@ -63,10 +67,13 @@ if [ -d "$HOME/.local/bin" ] ; then
     PATH="$HOME/.local/bin:$PATH"
 fi
 
+export PATH="/opt/flutter/bin:$PATH"
+export PATH="/home/dave/Android/Sdk/cmdline-tools/bin:$PATH"
+
 . "$HOME/.cargo/env"
 
 PATH="/home/dave/perl5/bin${PATH:+:${PATH}}"; export PATH;
-PERL5LIB="/home/dave/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
-PERL_LOCAL_LIB_ROOT="/home/dave/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
+# PERL5LIB="/home/dave/perl5/lib/perl5${PERL5LIB:+:${PERL5LIB}}"; export PERL5LIB;
+# PERL_LOCAL_LIB_ROOT="/home/dave/perl5${PERL_LOCAL_LIB_ROOT:+:${PERL_LOCAL_LIB_ROOT}}"; export PERL_LOCAL_LIB_ROOT;
 PERL_MB_OPT="--install_base \"/home/dave/perl5\""; export PERL_MB_OPT;
 PERL_MM_OPT="INSTALL_BASE=/home/dave/perl5"; export PERL_MM_OPT;

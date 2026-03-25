@@ -10,8 +10,12 @@ alias fhistory='history | fzf --tac'
 # NOTE: xargs -o doesn't work on BSD
 alias fdiff='git status --short | grep -E '"'"'^ M'"'"' | awk '"'"'{ print $2 }'"'"' | fzf --cycle --preview="git diff --color {}" --print0 | xargs -r -o -0 vim'
 alias fd=fdiff
+alias vim=vim-huge
+alias vi='vim +"let g:ale_enabled = 0" +"let g:coc_start_at_startup = 0" +"syntax off"'
 
 alias adminer='sudo docker run --rm -p 8080:8080 --network=host -it adminer'
+
+alias quickshow='quickshow --config /home/dave/quickevent/quickshow.conf'
 
 # FUNCTIONS
 
@@ -47,3 +51,4 @@ toilet-lsfonts() {
 		echo ${I%.tlf} | toilet --font=${I%.tlf};
 	done
 }
+randpw(){ < /dev/urandom tr -dc _A-Z-a-z-0-9 | head -c${1:-16};echo; }

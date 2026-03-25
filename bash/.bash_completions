@@ -29,3 +29,7 @@ if [ -f /usr/share/bash-completion/completions/gpg ]; then
 	. /usr/share/bash-completion/completions/gpg
 fi
 
+if [ -f /usr/share/bash-completion/completions/make ]; then
+	. /usr/share/bash-completion/completions/make
+fi
+
