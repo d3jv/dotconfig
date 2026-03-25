@@ -12,6 +12,7 @@ export TERMINAL=konsole
 pipewire &
 xbindkeys
 xscreensaver --nosplash &
+xss-lock -- xscreensaver-command -lock &
 dunst &
 
 # start herbstluft in locked mode, it will be unlocked at the end of autostart
