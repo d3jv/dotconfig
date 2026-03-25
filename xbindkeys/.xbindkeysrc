@@ -16,8 +16,8 @@
 "wpctl set-mute @DEFAULT_AUDIO_SOURCE@ toggle"
   Mod2 + XF86AudioMicMute  
 
-# "arandr"
-#   Mod2 + XF86Display
+"arandr"
+  Mod2 + XF86Display
 
 "rofi -show calc"
   Mod2 + XF86Calculator
