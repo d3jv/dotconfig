@@ -21,8 +21,8 @@ HISTTIMEFORMAT="%Y-%m-%d %T "
 # append to the history file, don't overwrite it
 shopt -s histappend
 
-HISTSIZE=1000
-HISTFILESIZE=2000
+HISTSIZE=-1
+HISTFILESIZE=-1
 
 # PS1
 __update_ps1() {
