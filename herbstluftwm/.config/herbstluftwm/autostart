@@ -1,11 +1,27 @@
 #!/usr/bin/env bash
 
-# this is a simple config for herbstluftwm
-
+# FUNCTIONS
 hc() {
     herbstclient "$@"
 }
 
+# SESSION
+setxkbmap cz
+
+# add Noto font paths
+xset +fp /usr/share/fonts/noto
+xset +fp /usr/share/fonts/TTF
+
+export TERMINAL=konsole
+
+numlockx on
+pipewire &
+xbindkeys
+xscreensaver --nosplash &
+xss-lock -- xscreensaver-command -lock &
+dunst &
+
+# HERBSTLUFT
 hc lock
 
 kblayout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')
