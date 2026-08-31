@@ -21,7 +21,7 @@ alias fd=fdiff
 ## vim ##
 alias vim=vim-huge
 # vim but not an IDE
-alias vi='vim +"let g:ale_enabled = 0" +"let g:coc_start_at_startup = 0" +"syntax off"'
+alias vi='vim --cmd "let g:ale_enabled = 0" --cmd "let g:coc_start_at_startup = 0" +"syntax off"'
 
 ## git ##
 alias g=git
