@@ -1,11 +1,11 @@
 #!/usr/bin/env bash
 
-# FUNCTIONS
+########################## FUNCTIONS
 hc() {
     herbstclient "$@"
 }
 
-# SESSION
+########################## SESSION
 setxkbmap cz
 
 # add Noto font paths
@@ -14,14 +14,20 @@ xset +fp /usr/share/fonts/TTF
 
 export TERMINAL=konsole
 
+# japanese typing
+export GTK_IM_MODULE=fcitx
+export QT_IM_MODULE=fcitx
+export XMODIFIERS=@im=fcitx
+
 numlockx on
 pipewire &
 xbindkeys
 xscreensaver --nosplash &
 xss-lock -- xscreensaver-command -lock &
 dunst &
+fcitx5 &
 
-# HERBSTLUFT
+########################## HERBSTLUFT
 hc lock
 
 kblayout=$(setxkbmap -print | awk -F"+" '/xkb_symbols/ {print $2}')
